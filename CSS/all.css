@@ -216,6 +216,11 @@ button {
     justify-content: center;
 }
 
+/* 水平平分對齊 */
+.justify-space-between {
+    justify-content: space-between;
+}
+
 /* 水平向右對齊 */
 .justify-end {
     justify-content: end;
@@ -258,16 +263,55 @@ button {
 	color: var(--primary-dark);
 }
 
+.h4 {
+	font-size: 24px;
+	line-height: 1.2;
+	font-weight: 700;
+	color: var(--primary-dark);
+}
+
 .h5 {
 	font-size: 18px;
 	line-height: 1.2;
 	font-weight: 700;
 }
 
+.h6 {
+    font-size: 16px;
+	line-height: 1.2;
+	font-weight: 700;
+    color: var(--neuture-80);
+}
+
 .h7 {
 	font-size: 14px;
 	line-height: 1.2;
 	font-weight: 700;
+}
+
+.tm {
+    font-size: 16px;
+	line-height: 1.5;
+	font-weight: 400;
+}
+
+.tr {
+    font-size: 14px;
+	line-height: 1.5;
+	font-weight: 400;
+}
+
+/* 文字顏色 */
+.text-neuture-60 {
+	color: var(--neuture-60);
+}
+
+.text-neuture-80 {
+	color: var(--neuture-80);
+}
+
+.text-primary-100 {
+	color: var(--primary-100);
 }
 
 .pl-16 {
@@ -287,6 +331,11 @@ button {
 .px-32 {
 	padding-left: 32px;
 	padding-right: 32px;
+}
+
+.py-4 {
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 
 .py-8 {
@@ -314,8 +363,24 @@ button {
 	padding-bottom: 32px;
 }
 
+.p-16 {
+    padding: 16px;
+}
+
 .p-24 {
 	padding: 24px;
+}
+
+.pt-12 {
+    padding-top: 12px;
+}
+
+.pb-12 {
+    padding-bottom: 12px;
+}
+
+.pb-20 {
+    padding-bottom: 20px;
 }
 
 .mb-8 {
@@ -324,6 +389,10 @@ button {
 
 .mb-16 {
 	margin-bottom: 16px;
+}
+
+.mb-20 {
+	margin-bottom: 20px;
 }
 
 .mb-32 {
@@ -338,6 +407,19 @@ button {
 	margin-bottom: 72px;
 }
 
+.sum {
+    padding-top: 12px;
+}
+
+.freight {
+    padding-bottom: 20px;    
+}
+
+.lined-cost {
+    border-bottom: 1px solid var(--neuture-80);
+    border-color: var(--neutral-20);
+}
+
 .bg-primary-dark {
 	background-color: var(--primary-dark);
 }
@@ -346,13 +428,83 @@ button {
 	background-color: #598E7126;	
 }
 
-
-
-.b-line {
+.b-lined {
 	border-bottom: 1px solid var(--neuture-40);
 }
 
+.lined-process {
+    border-bottom: 2px solid var(--primary-dark);
+}
 
+.login {
+    color: var(--neutral-0);
+}
+
+.col-cart {
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--neuture-40);
+}
+
+.col-product {
+    color: var(--neuture-40);
+}
+
+.col-price {
+    padding-left: 56px;
+    color: var(--neuture-40);
+}
+
+.col-quantity,.col-subtotal {
+    padding-left: 56px;
+    text-align: center;
+    color: var(--neuture-40);
+}
+
+.p-info {
+    padding-left: 16px;
+}
+
+.p-element {
+    margin-bottom: 21px;
+}
+
+/* --- 數量控制容器 --- */
+.quantity-control {
+    height: 56px; /* 固定高度，讓按鈕和輸入框等高 */    
+}
+
+/* --- 按鈕樣式 (減號和加號) --- */
+.quantity-control button {
+    border: none;
+    background-color: transparent;
+}
+
+.quantity-btn {
+    border: 1px solid var(--neuture-40);
+}
+
+/* --- 按鈕樣式 (減號和加號) --- */
+.btn {
+    background-color: transparent; /* 背景透明 */
+    border: none;
+}
+
+/* --- 輸入框樣式 --- */
+.quantity-input {
+    text-align: center;
+    border: none;
+    padding: 0;
+    width: 128px;
+    color: var(--neuture-80);
+}
+
+.lined-product {
+    border-bottom: 1px solid var(--neuture-40);
+}
+
+.text-pr-118 {
+    padding-right: 118px;
+}
 
 
 /* 以下 */
@@ -404,143 +556,6 @@ button {
     padding: 0;
 }
 
-/* P2 */
-/* --- 購物車容器 --- */
-.cart-section {
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* --- 標題區塊 --- */
-.section-header {
-    background-color: var(--light-green-bg);
-    color: var(--text-dark);
-    padding: 15px 20px;
-    border: 1px solid var(--border-color);
-    border-bottom: none; /* 移除下方邊框，以和下方表格連接 */
-}
-
-.section-header h2 {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0;
-}
-
-/* --- 購物車表格區塊 --- */
-.cart-table {
-    padding: 0 20px;
-    border: 1px solid var(--border-color);
-    border-top: none; /* 移除上方邊框，以和標題連接 */
-}
-
-.cart-table-row {
-    display: grid;
-    /* 定義四個欄位，其中商品資訊佔據較大空間 */
-    grid-template-columns: 3fr 1fr 1fr 1fr;
-    align-items: center;
-}
-
-/* --- 表格標頭樣式 --- */
-.table-header {
-    font-weight: bold;
-    color: var(--text-dark);
-    padding: 15px 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* --- 表格欄位對齊 --- */
-.col-price,
-.col-subtotal {
-    text-align: center;
-}
-
-.col-quantity {
-    text-align: center;
-}
-
-/* --- 商品項目樣式 --- */
-.cart-item {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.cart-item:last-child {
-    border-bottom: none;
-}
-
-/* --- 商品資訊區塊 --- */
-.col-product {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.product-img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.product-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.product-name {
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--text-dark);
-}
-
-.product-desc {
-    font-size: 14px;
-    color: var(--text-dark);
-    margin-top: 5px;
-}
-
-.product-flavor {
-    font-size: 12px;
-    color: var(--text-light);
-    margin-top: 5px;
-}
-
-/* --- 數量控制按鈕樣式 --- */
-.quantity-control {
-    display: flex;
-    align-items: center;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    overflow: hidden;
-    height: 35px;
-    margin: 0 auto; /* 水平居中 */
-}
-
-.quantity-control button {
-    background-color: #f8f8f8;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    width: 35px;
-    height: 100%;
-}
-
-.quantity-input {
-    width: 40px;
-    border: none;
-    text-align: center;
-    font-size: 16px;
-    outline: none;
-}
-
-/* --- 價格和小計樣式 --- */
-.col-price,
-.col-subtotal {
-    font-weight: bold;
-    color: var(--text-dark);
-}
 
 /* p3 */
 /* --- 容器和標籤樣式 --- */
