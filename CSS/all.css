@@ -280,7 +280,6 @@ button {
     font-size: 16px;
 	line-height: 1.2;
 	font-weight: 700;
-    color: var(--neuture-80);
 }
 
 .h7 {
@@ -302,6 +301,13 @@ button {
 }
 
 /* 文字顏色 */
+.text-neuture-0 {
+    color: var(--neutral-0);
+}
+.text-neuture-40 {
+	color: var(--neuture-40);
+}
+
 .text-neuture-60 {
 	color: var(--neuture-60);
 }
@@ -311,11 +317,23 @@ button {
 }
 
 .text-primary-100 {
-	color: var(--primary-100);
+    color: var(--primary-100);
+}
+
+.text-center {
+    color: var(--neuture-80);
+    text-align: center;
+}
+
+.pl-8 {
+    padding-left: 8px;
 }
 
 .pl-16 {
 	padding-left: 16px;
+}
+.pl-56 {
+	padding-left: 56px;
 }
 
 .px-8 {
@@ -383,6 +401,10 @@ button {
     padding-bottom: 20px;
 }
 
+.mr-24 {
+    margin-right: 24px;
+}
+
 .mb-8 {
 	margin-bottom: 8px;
 }
@@ -420,6 +442,10 @@ button {
     border-color: var(--neutral-20);
 }
 
+.bg-neutral-20 {
+    background-color: var(--neutral-20);
+}
+
 .bg-primary-dark {
 	background-color: var(--primary-dark);
 }
@@ -443,21 +469,36 @@ button {
 .col-cart {
     padding-bottom: 16px;
     border-bottom: 1px solid var(--neuture-40);
+    display: grid;
+    /* 定義四個欄位，使用 fr 單位讓寬度按比例分配 */
+    grid-template-columns: 3fr 3fr 2fr 1fr;
+    
+    /* 垂直居中對齊文字 */
+    align-items: center;
 }
 
 .col-product {
     color: var(--neuture-40);
+    margin-left: 24px;
 }
 
 .col-price {
-    padding-left: 56px;
     color: var(--neuture-40);
 }
 
-.col-quantity,.col-subtotal {
-    padding-left: 56px;
+.col-quantity {
     text-align: center;
     color: var(--neuture-40);
+}
+
+.col-subtotal {
+    text-align: center;
+
+    margin-right: 24px;
+}
+
+.col-mr-56 {
+    margin-right: 56px;
 }
 
 .p-info {
@@ -470,7 +511,8 @@ button {
 
 /* --- 數量控制容器 --- */
 .quantity-control {
-    height: 56px; /* 固定高度，讓按鈕和輸入框等高 */    
+    height: 56px; /* 固定高度，讓按鈕和輸入框等高 */
+    width: auto;
 }
 
 /* --- 按鈕樣式 (減號和加號) --- */
@@ -481,11 +523,18 @@ button {
 
 .quantity-btn {
     border: 1px solid var(--neuture-40);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* --- 按鈕樣式 (減號和加號) --- */
 .btn {
     background-color: transparent; /* 背景透明 */
+    border: none;
+}
+
+.btn-link {
     border: none;
 }
 
@@ -502,23 +551,61 @@ button {
     border-bottom: 1px solid var(--neuture-40);
 }
 
+.row-product {
+    display: grid;
+    grid-template-columns: 3fr 3fr 2fr 1fr;
+}
+
 .text-pr-118 {
     padding-right: 118px;
 }
 
+.cart-list {
+    padding-left: 16px;
+}
 
-/* 以下 */
+/* --- 容器和標籤樣式 --- */
+.form-group {
+	border: 1px solid var(--neuture-40);	
+}
 
+.form-group label {
+    display: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* --- 下拉式選單樣式 --- */
+.custom-select {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;    
+    appearance: none;
+    /* 設置下拉箭頭的背景圖 */
+    background-image: url('/assets/img/Keyboard arrow down.svg');
+    background-repeat: no-repeat;
+    /* 將圖片水平靠右，垂直置中 */
+    background-position: right 16px center;
+}
+
+/* 確保下拉式選單在不同瀏覽器上的樣式一致 */
+.custom-select::-ms-expand {
+    display: none;
+}
+
+
+/* 以下---找出搜尋欄的樣式 */
 .search-bar {
     /* 使用 Flexbox 將內容水平對齊 */
     display: flex;
     align-items: center;
     
     /* 建立底部線條 */
-    border-bottom: 2px solid #ccc;
+    border-bottom: 1px solid var(--neuture-40);
     
     /* 內邊距，使內容與邊緣有距離 */
-    padding-bottom: 5px;
+    padding-bottom: 4px;
 }
 
 .search-input {
@@ -554,50 +641,4 @@ button {
     
     /* 移除預設的邊距 */
     padding: 0;
-}
-
-
-/* p3 */
-/* --- 容器和標籤樣式 --- */
-.form-group {
-    margin-bottom: 20px;
-	border: 1px solid var(--neuture-40);	
-}
-
-.form-group label {
-    display: block;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-/* --- 下拉式選單樣式 --- */
-.custom-select {
-    width: 100%;
-    padding: 12px 15px;
-    font-size: 16px;
-    color: var(--neuture-80);
-
-    
-    /* 移除瀏覽器預設的樣式 */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    
-    background-color: var(--background-color);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    cursor: pointer;
-    outline: none;
-    
-    /* 設置下拉箭頭的背景圖 */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23999" d="M7 10l5 5 5-5z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 18px;
-}
-
-/* 確保下拉式選單在不同瀏覽器上的樣式一致 */
-.custom-select::-ms-expand {
-    display: none;
 }
