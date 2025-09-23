@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>結帳畫面</title>
     <link rel="stylesheet" href="/CSS/all.css">
+    <link rel="stylesheet" href="/CSS/css reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
-  <nav class="container mb-72">
+  <!-- 頁首 -->
+  <!-- <nav class="container mb-72">
     <div class="d-flex align-center justify-between">
       <a href="index.html" class="py-16 "><img src="/assets/img/logo_on light.svg" alt="logo"></a>
       <ul class="d-flex align-center">   
         <li class="px-24 py-20"><div class="search-bar">
           <input type="text" placeholder="輸入商品名稱" class="search-input">
-          <button class="search-button"><img src="/assets/img/Search.svg" alt=""></button></li>
+          <button class="search-button"><img src="/assets/img/Search.svg" alt="搜尋符號"></button></li>
         <li><a href="#" class="p-24">品牌介紹</a></li>
         <li><a href="#" class="p-24">所有商品</a></li>
         <li><img src="/assets/img/Cart.svg" class="p-24" alt="購物車"></a></li>
         <li><a href="" class="d-flex align-center justify-end px-32 py-32 bg-primary-dark tm login">註冊/登入</a></li>
         </ul>
     </div>
-  </nav>
-  <main class="container mb-56">
+  </nav> -->
+  <main class="container mb-56 px-12">
     <script>
       document.addEventListener('DOMContentLoaded', () => {
     // 找到所有數量控制容器
     const quantityControls = document.querySelectorAll('.quantity-control');
-
     // 迴圈處理每一個容器
     quantityControls.forEach(control => {
         const minusBtn = control.querySelector('.minus-btn');
@@ -50,28 +51,29 @@
     });
 });
     </script>
-
-    <div class="d-flex justify-center">
-      <ul class="container d-flex flex-row row mb-56">
-        <li class="col-4 d-flex align-center flex-column lined-process py-16 h5 text-primary-dark"><i class="bi bi-1-circle-fill pb-12"></i>查看購物車</li>
-        <li class="col-4 d-flex align-center flex-column b-lined py-16 h5 text-neuture-40"><i class="bi bi-2-circle-fill pb-12"></i>填寫資料</li>
-        <li class="col-4 d-flex align-center flex-column b-lined py-16 h5 text-neuture-40"><i class="bi bi-3-circle-fill pb-12"></i>訂單確認</li>
+<!-- 購物進度 -->
+    <div class="d-flex justify-center ">
+      <ul class="container row progress-label">
+        <li class="col-4 d-flex align-center flex-column lined-process py-16 text-primary-dark "><img src="/assets/img/Frame 1.svg" alt="1" class="icon-md-pd"><p class="h5 text-primary-dark">查看購物車</p></li>
+        <li class="col-4 d-flex align-center flex-column b-lined py-16 h5 text-neuture-40"><img src="/assets/img/Frame 2.svg" alt="2" class="icon-md-pd"><p>填寫資料</p></li>
+        <li class="col-4 d-flex align-center flex-column b-lined py-16 h5 text-neuture-40"><img src="/assets/img/Frame 3.svg" alt="3" class="icon-md-pd"><p>訂單確認</p></li>
       </ul>
     </div>
     <!-- 購物車清單 -->
     <div class="mb-56">
-      <h2 class="container py-8 bg-color text-serif mb-32 cart-list">購物車清單</h2>
+      <h2 class="container py-8 bg-color text-serif cart-list">購物車清單</h2>
       <div class="container">
         <div class="d-flex justify-between col-cart">
-          <span class="tm col-product col-mr-56">商品資訊</span>
-          <span class="tm col-price col-mr-56">單價</span>
-          <span class="tm col-quantity col-mr-56">數量</span>
-          <span class="tm col-subtotal text-neuture-40">小計</span>
+          <span class="tm col-product col-mr-56 table-description">商品資訊</span>
+          <span class="tm col-price col-mr-56 table-description">單價</span>
+          <span class="tm col-quantity col-mr-56 table-description">數量</span>
+          <span class="tm col-subtotal text-neuture-40 table-description">小計</span>
         </div>
+        <!-- 商品資訊 -->
         <div>
           <!-- 琥珀之夜商品資訊 -->
           <span class="container lined-product ">
-            <div class="d-flex align-center row-product">
+            <div class="d-flex align-center row-product col-cart col-cart2">
               <div class="d-flex align-center p-24">
                 <img src="/assets/img/琥珀之夜.jpg" alt="琥珀之夜">
                 <div class="p-info ">
@@ -80,9 +82,9 @@
                   <p class="tr text-primary-100 text-pr-118">琥珀廣Ｘ藿香Ｘ雪松</p>
                 </div>
               </div>
-              <div class="h6 text-neuture-80">NT$ 399</div>
-              <div class="quantity-control quantity-btn col-mr-56">
-                <button class="minus-btn  "><img src="/assets/img/Remove.svg" alt="減號"></button>
+              <div class="h6 text-neuture-80 p-price ">NT$ 399</div>
+              <div class="quantity-control quantity-btn col-mr-56 ">
+                <button class="minus-btn "><img src="/assets/img/Remove.svg" alt="減號"></button>
                 <input type="text" value="1" class="quantity-input tm">
                 <button class="plus-btn"><img src="/assets/img/Add.svg" alt="加號"></button>
               </div>
@@ -91,7 +93,7 @@
           </span>
           <!-- 靜夜語商品資訊 -->
           <span class="container lined-product ">
-            <div class="d-flex align-center row-product">
+            <div class="d-flex align-center row-product col-cart col-cart2">
               <div class="d-flex align-center p-24">
                 <img src="/assets/img/靜夜語.jpg" alt="靜夜語">
                 <div class="p-info ">
@@ -100,9 +102,9 @@
                   <p class="tr text-primary-100 text-pr-118">薰衣草Ｘ雪松Ｘ甜橙</p>
                 </div>
               </div>
-              <div class="h6 text-neuture-80">NT$ 599</div>
+              <div class="h6 text-neuture-80 p-price">NT$ 599</div>
               <div class="quantity-control quantity-btn col-mr-56">
-                <button class="minus-btn  "><img src="/assets/img/Remove.svg" alt="減號"></button>
+                <button class="minus-btn "><img src="/assets/img/Remove.svg" alt="減號"></button>
                 <input type="text" value="1" class="quantity-input tm">
                 <button class="plus-btn"><img src="/assets/img/Add.svg" alt="加號"></button>
               </div>
@@ -159,8 +161,6 @@
       <button type="button" class="p-16 btn-link d-flex align-center text-neuture-0 bg-primary-dark">下一步：填寫資料<img src="/assets/img/Arrow right.svg" alt="下一步：填寫資料" class="pl-8"></button>
     </div>
   </main>
-  <footer>
-
-  </footer>
+  <footer></footer>
 </body>
 </html>
